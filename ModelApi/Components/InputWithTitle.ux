@@ -1,0 +1,41 @@
+<Panel ux:Class="esInput" IsPassword="false" ActionStyle="Default" IsMultiline="false" ReadOnly="false" Hint="Default">
+    <string ux:Property="Title"/>
+    <string ux:Property="Value"/>
+    <string ux:Property="ActionStyle" />
+    <string ux:Property="Hint" />
+    <bool ux:Property="IsPassword" />
+    <bool ux:Property="IsMultiline" />
+    <bool ux:Property="ReadOnly" />
+
+    <Panel>
+        <WhileFalse Value="{ReadProperty IsMultiline}">
+            <TextInput TextWrapping="Wrap" Padding="10,10,20,10"
+                Value="{Property Value}"
+                CaretColor="esColor.DarkRed"
+                SelectionColor="esColor.DarkShadow"
+                TextColor="esColor.DarkBlue"
+                IsPassword="{ReadProperty IsPassword}"
+                ActionStyle="{ReadProperty ActionStyle}"
+                IsEnabled="{ReadProperty ReadOnly} == false"
+                InputHint="{ReadProperty Hint}"
+                PlaceholderText="{ReadProperty Title}"
+                PlaceholderColor="esColor.LightBlue"/>
+        </WhileFalse>
+        <WhileTrue Value="{ReadProperty IsMultiline}">
+            <TextView TextWrapping="Wrap" Padding="10,10,20,10"
+                Value="{Property Value}"
+                CaretColor="esColor.DarkRed"
+                SelectionColor="esColor.LightRed"
+                TextColor="esColor.DarkBlue"
+                IsEnabled="{ReadProperty ReadOnly} == false"/>
+        </WhileTrue>
+        <Rectangle Layer="Background" CornerRadius="7" Color="esColor.Main">
+            <Shadow Color="esColor.LightShadow" Size="5" Distance="4"  Angle="110" Mode="Background" />
+            <Shadow Color="esColor.DarkShadow" Size="5" Distance="4" Angle="-60" Mode="Background" />
+        </Rectangle>
+    </Panel>
+
+    <WhileDisabled>
+        <Change this.Opacity=".5"/>
+    </WhileDisabled>
+</Panel>

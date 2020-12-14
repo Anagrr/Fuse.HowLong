@@ -1,0 +1,11 @@
+<Container ux:Class="NeuPanelPushed" Subtree="innerPanel">
+    <NeuPanel  ux:Binding="Children">
+        <Rectangle CornerRadius="7" Color="esColor.Main">
+            <Shadow Color="esColor.LightShadow" Size="5" Distance="4"  Angle="110" Mode="Background" />
+            <Shadow Color="esColor.DarkShadow" Size="5" Distance="4" Angle="-60" Mode="Background" />
+            
+            <DockPanel  Size="100%" ux:Name="innerPanel"/>
+        </Rectangle>
+    </NeuPanel>
+</Container>
+

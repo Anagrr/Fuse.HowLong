@@ -1,0 +1,22 @@
+<DockPanel ux:Class="esToggleMark" Title="esToggle">
+    <string ux:Property="Title" />
+    <bool ux:Property="IsOn" />
+    <esText Value="{ReadProperty Title}" Alignment="VerticalCenter" TextWrapping="Wrap"/>
+    
+    <Rectangle Dock="Right" Color="esColor.Main" CornerRadius="15" Margin="10, 0, 0, 0" Size="33">
+            <WhileTrue Value="{ReadProperty IsOn}">
+                <esText Value="{Resource i.Check}" FontSize="13" Font="fa.Solid" Alignment="Center"/>
+            </WhileTrue>
+            
+            <Stroke Color="#EAF0F8"/>
+            <Shadow ux:Name="ds" Color="esColor.DarkShadow" Size="10" Distance="7" Angle="110" Mode="Background" />
+            <Shadow ux:Name="ls" Color="esColor.LightShadow" Size="10" Distance="7" Angle="-60" Mode="Background" />
+
+            <WhilePressed>
+                <Change ds.Size="1" Duration=".05"/>
+                <Change ds.Distance="1" Duration=".05"/>
+                <Change ls.Size="1" Duration=".05"/>
+                <Change ls.Distance="1" Duration=".05"/>
+            </WhilePressed>
+        </Rectangle>
+</DockPanel>

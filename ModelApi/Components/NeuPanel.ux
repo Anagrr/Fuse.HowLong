@@ -1,0 +1,7 @@
+<DockPanel ux:Class="NeuPanel" Padding="10">
+    <Rectangle Layer="Background" Size="100%" Color="esColor.Main" CornerRadius="15">
+        <Stroke Color="#EAF0F8"/>
+        <Shadow ux:Name="ds" Color="esColor.DarkShadow" Size="10" Distance="7" Angle="110" Mode="Background" />
+        <Shadow ux:Name="ls" Color="esColor.LightShadow" Size="10" Distance="7" Angle="-60" Mode="Background" />
+    </Rectangle>    
+</DockPanel>

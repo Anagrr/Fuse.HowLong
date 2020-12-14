@@ -1,0 +1,30 @@
+<Panel ux:Class="esGlobals">
+
+    <Text ux:Class="esText" Color="esColor.Blue" LoadAsync="true"/>
+    <Text ux:Class="esTextBold" Color="esColor.Blue"  LoadAsync="true"/>
+
+    <!-- Fonts -->
+    <Font File="Assets/Fonts/Proba Pro Regular.otf" ux:Global="esFonts.Regular"/>
+    <Font File="Assets/Fonts/Proba Pro Bold.otf" ux:Global="esFonts.Bold"/>    
+    <Font File="Assets/Fonts/fa-brands-400.ttf" ux:Global="fa.Brands"/>
+    <Font File="Assets/Fonts/fa-regular-400.ttf" ux:Global="fa.Regular"/>
+    <Font File="Assets/Fonts/fa-solid-900.ttf" ux:Global="fa.Solid"/>
+    
+    <string ux:Global="i.Check" ux:Value="&#xf00c;"/>
+    <string ux:Global="i.Trash" ux:Value="&#xf2ed;"/>
+    <string ux:Global="i.Plus" ux:Value="&#xf067;"/>
+    <string ux:Global="i.Recycle" ux:Value="&#xf1b8;"/>
+    <string ux:Global="i.Times" ux:Value="&#xf00d;"/>
+    <!-- Colors -->
+    <float4 ux:Global="esColor.Blue" ux:Value="#00a6eb" />
+    <float4 ux:Global="esColor.LightBlue" ux:Value="#81d0f4" />
+    <float4 ux:Global="esColor.DarkBlue" ux:Value="#2a668e" />
+    <float4 ux:Global="esColor.Red" ux:Value="#e60036" />
+    <float4 ux:Global="esColor.LightRed" ux:Value="#ef958c" />
+    <float4 ux:Global="esColor.DarkRed" ux:Value="#951b3c" />
+    <float4 ux:Global="esColor.Disabled" ux:Value="#ccc" />
+
+    <float4 ux:Global="esColor.Main" ux:Value="#E0E5EC" />
+    <float4 ux:Global="esColor.LightShadow" ux:Value="#fff" />
+    <float4 ux:Global="esColor.DarkShadow" ux:Value="#A3B1C6" />
+</Panel>

@@ -1,0 +1,31 @@
+<DockPanel ux:Class="HomePage" Model="Pages/HomePage" Padding="10" Color="esColor.Main">
+    <Deferred>
+        <NeuPanel Dock="Top" Margin="0,0,0,20" MinHeight="75">
+            <StackLayout ItemSpacing="10"/>
+            <esText Value="Current active task:" />
+            <esTextBold Value="{taskStore.activeTaskName}" TextWrapping="Wrap" />         
+        </NeuPanel>
+        
+        <NeuPanelPushed>
+            <ScrollView>
+                <StackPanel ItemSpacing="10" Padding="20, 0, 20, 20">
+                    <Each Items="{taskStore.allTasks}">
+                        <DockPanel HitTestMode="LocalBoundsAndChildren" Padding="10,15">
+                            <esToggleMark Title="{name}" IsOn="{name == taskStore.activeTaskName}" Clicked="{setActive}"/>                           
+                            <Devider />
+                        </DockPanel>
+                    </Each>													
+                </StackPanel>
+            </ScrollView>
+            <WhileEmpty Items="{taskStore.allTasks}">
+                <esText Value="There is no any available tasks. Please go to 'Tasks' tab and create new one."
+                        TextAlignment="Center"
+                        Color="esColor.LightRed"
+                        Alignment="Center"
+                        TextWrapping="Wrap"
+                        LineSpacing="15"
+                        Margin="15"/>
+            </WhileEmpty>
+        </NeuPanelPushed>
+    </Deferred>
+</DockPanel>
