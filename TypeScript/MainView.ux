@@ -1,0 +1,39 @@
+<App Model="MainView" Background="esColor.Main">
+	<iOS.StatusBarConfig Style="Dark" IsVisible="true" />
+	<Android.StatusBarConfig IsVisible="true" Color="esColor.Main" />
+
+	<ClientPanel>
+
+		<Panel Layer="Overlay" Size="100%" Color="esColor.Main" HitTestMode="LocalBoundsAndChildren" Visibility="{modalService.confirmationVisibility}">
+			<NeuPanelPushed Size="80%, 60%">
+				<esText Value="{modalService.promptText}" TextWrapping="Wrap" TextAlignment="Center" Alignment="Center" Margin="20"/>
+				<DockPanel Dock="Bottom" Margin="30,30,30,20">
+					<NeuButton Dock="Left" Title="{Resource i.Check}" Size="33" Clicked="{modalService.confirm}" FontColor="esColor.Blue"/>
+					<NeuButton Dock="Right" Title="{Resource i.Times}" Size="33" Clicked="{modalService.cancel}" />
+				</DockPanel>
+			</NeuPanelPushed>
+		</Panel>		
+
+		<DockPanel>
+			<PageControl ActiveIndex="{pageIndex}" Padding="10">
+				<HomePage />
+				<TimePage />
+				<TasksPage />
+			</PageControl>
+
+			<Grid ColumnCount="{tabsCount}" Dock="Bottom" Height="50" Margin="20, 5, 20, 20" CellSpacing="20">
+				<Each Items="{tabs}">
+					<NeuTabButton Clicked="{onTabClicked}" Title="{title}" Icon="{icon}" IsSelected="{title} == {activePage.title}" />
+				</Each>
+				<WhileKeyboardVisible>
+					<Collapse />
+				</WhileKeyboardVisible>
+				<WhileKeyboardVisible Invert="true">
+					<Show />
+				</WhileKeyboardVisible>
+			</Grid>
+		</DockPanel>
+	</ClientPanel>
+		
+	<Loader Visibility="{loader.state}" />
+</App>

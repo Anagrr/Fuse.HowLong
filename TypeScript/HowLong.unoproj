@@ -1,0 +1,27 @@
+{
+  "Packages": [
+    "Fuse",
+    "FuseJS"
+  ],
+  "Includes": [
+    "*"
+  ],
+  "Title": "How Long",
+  "Version": "0.0.1",
+
+  "Mobile": {
+		"Orientations": "Portrait"
+	},
+  "Android": {
+		"ApplicationLabel": "How Long?",
+    "Package": "com.anagr.howlong",
+    "Icons":{
+			"LDPI": "Assets/app-icon.png",
+			"MDPI": "Assets/app-icon.png",
+			"HDPI": "Assets/app-icon.png",
+			"XHDPI": "Assets/app-icon.png",
+			"XXHDPI": "Assets/app-icon.png",
+			"XXXHDPI": "Assets/app-icon.png"
+		}
+  }
+}

@@ -1,0 +1,29 @@
+<DockPanel ux:Class="TasksPage" Model="Pages/TasksPage" Margin="10, 0">
+    <NeuPanelPushed Margin="0, 10">        
+        <ScrollView>
+            <StackPanel ItemSpacing="10" Padding="20, 0, 20, 20">
+                <Each Items="{taskStore.tasks}">
+                    <DockPanel ux:Name="item" HitTestMode="LocalBoundsAndChildren" Padding="0,15">
+                        <esText Value="{name}" Alignment="VerticalCenter" TextWrapping="Wrap"/>
+                        <NeuButton Dock="Right" Title="{Resource i.Trash}" Size="33" Clicked="{remove}" Margin="10,0,0,0"/>
+                        <Devider />
+                    </DockPanel>
+                </Each>													
+            </StackPanel>
+        </ScrollView>
+        <WhileEmpty Items="{taskStore.tasks}">
+            <esText Value="There is no any available tasks. Add one by input below."
+                    TextAlignment="Center"
+                    Color="esColor.LightRed"
+                    Alignment="Center"
+                    TextWrapping="Wrap"
+                    LineSpacing="15"
+                    Margin="15"/>
+        </WhileEmpty>
+    </NeuPanelPushed>
+
+    <NeuPanel Dock="Bottom" Margin="0, 10">
+        <esInput Title="New task ..." Value="{newTaskName}" Margin="0,0,12,0"/>
+        <NeuButton Dock="Right" Title="{Resource i.Plus}" Size="33" Clicked="{addNewTask}"/>
+    </NeuPanel>
+</DockPanel>

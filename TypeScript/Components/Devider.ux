@@ -1,0 +1,4 @@
+<Rectangle ux:Class="Devider" Layer="Background" Height="2" Width="100%" Color="esColor.Main" Alignment="Bottom">
+    <Shadow Color="esColor.DarkShadow" Size="3" Distance="3" Angle="135" Mode="Background" />
+    <Shadow Color="esColor.LightShadow" Size="3" Distance="3" Angle="-50" Mode="Background" />
+</Rectangle>
